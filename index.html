@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Top Lists</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<style>
+/* Bootstrap overrides */
+body {
+  /*min-height: 1000px;*/
+  padding-top: 70px;
+}
+
+.navbar-default {
+  height: 65px;
+}
+
+.navbar-default
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 65px;
+  font-size: 18pt;
+}
+
+.navbar-nav > li > a {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 65px;
+  font-size: 16pt;
+}
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<!-- Additional files for the Highslide popup effect -->
+<script src="https://www.highcharts.com/media/com_demo/js/highslide-full.min.js"></script>
+<script src="https://www.highcharts.com/media/com_demo/js/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="https://www.highcharts.com/media/com_demo/css/highslide.css" />
+
+
+<script>
+	// Get the CSV and create the chart
+	//$.getJSON('based.json', function (chart) {
+	//	Highcharts.chart('plot', chart);
+	//});
+  $.getJSON('corr.json', function (chart) {
+		Highcharts.chart('plotcorr', chart);
+	});
+  $.getJSON('daytoday.json', function (chart) {
+    Highcharts.chart('plotdaytoday', chart);
+	});
+
+</script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <a href="index.html" class="navbar-brand">Top Lists Study</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav ">
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#download">Downloads</a></li>
+                  <li><a href="#plots">Live Plots</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#partner">Partner</a></li>
+              </ul>
+              <!--<ul class="nav navbar-nav navbar-right">
+                  <li class="mylogo"><a><img src="TU_Muenchen_Logo.svg" height=40px"/></a>&nbsp;</li>
+                  <li class="mylogo"><a><img src="rwth_comsys_bild_rgb.svg" height="40px"/></a>&nbsp;</li>
+                  <li class="mylogo"><a><img src="Usyd_new_logo.png" height="40px"/></a>&nbsp;</li>
+                  <li class="mylogo"><a><img src="neu.png" height="40px"/></a></li>
+              </ul>-->
+              <a href="https://github.com/toplists/toplists.github.io"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:999;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+  </nav>
+
+    <div class="container">
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+
+        <div class="page-header">
+
+<h2 id="about">About this Study</h2>
+<p style="font-size: 16px">
+A broad range of research areas including Internet measurement,
+privacy, and network security rely on lists of target domains to be
+analysed; researchers make use of target lists for reasons of necessity
+or efficiency. The popular Alexa list of one million domains is
+a widely used example. Despite their prevalence in research papers,
+the soundness of top lists has seldom been questioned by the community:
+little is known about the lists' creation, representativity,
+potential biases, stability, or overlap between lists.
+<br><br>
+In this study we survey the extent, nature, and evolution of top
+lists used by research communities. We assess the structure and
+stability of these lists, and show that rank manipulation is possible
+for some lists. We also reproduce the results of several scientific
+studies to assess the impact of using a top list at all, which list
+specifically, and the date of list creation. We find that <i>(i)</i> top lists
+generally overestimate results compared to the general population
+by a significant margin, often even an order of magnitude, and <i>(ii)</i>
+some top lists have surprising change characteristics, causing high
+day-to-day fluctuation and leading to result instability.We conclude
+our paper with specific recommendations on the use of top lists,
+and how to interpret results based on top lists with caution.
+</p>
+<br>
+<h2 id="download">Paper and Raw Data Download</h2>
+<p style="font-size: 16px">
+Our paper has been accepted for <a href="https://conferences.sigcomm.org/imc/2018/">IMC 2018</a>.<br>
+You can obtain a preprint of our paper from <a href="https://arxiv.org/abs/1805.11506">arXiv</a>.<br>
+</p>
+
+<h4>Raw Data</h4>
+<p style="font-size: 16px">
+We provide a historical and ongoing collection of top lists <a href="https://toplists.net.in.tum.de/archive">on an archive server</a>.<br>
+The full dataset of scripts and raw data used for the publication is hosted at at the <a href="https://mediatum.ub.tum.de/1452290">TUM Library</a>.<br>
+Please cite this study when using the data. <br /><br>
+</p>
+
+<h2 id="plots">Live Plots</h2>
+<h3 id="intersect">Intersecting Base Domains between Lists</h3>
+<div id="plotcorr" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<!--<h3>Share of Base Domains in Lists</h3>
+<div id="plot" style="min-width: 310px; height: 400px; margin: 0 auto"></div>-->
+<a href="https://github.com/toplists/toplists.github.io/blob/master/website_scripts/toplists_correlate.py">Script to create live plot</a>
+<h3 id="dailychange">Day-to-Day Changes per List</h3>
+Click and drag to zoom in. Hold down shift key to move (pan).
+<div id="plotdaytoday" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<a href="https://github.com/toplists/toplists.github.io/blob/master/website_scripts/toplists_daytoday.py">Script to create live plot</a>
+<h2 id="contact">Contact</h2>
+<p style="font-size: 16px">
+	<b>scheitle</b> [AT] <b>net.in.tum.de</b>
+</p>
+<p>
+	<b>jelten</b> [AT] <b>net.in.tum.de</b>
+</p>
+<!--
+<p>
+	<b>toplists</b> [AT] <b>list.net.in.tum.de</b>
+</p>
+-->
+
+<h2 id="partner">Partners and Measurement Data</h2>
+<p style="font-size: 16px">
+Internet Measurement data for this study is based on
+RWTH Aachen's <a href="https://netray.io/"> NetRay project</a>
+and
+<a href="https://net.in.tum.de/projects/gino/">TUM's GINO project</a>.
+</p>
+<br><br>
+	<div class="row">
+		<div class="col-lg-3" align="center" style="padding: 8px">
+			<a href="https://in.tum.de">
+				<img src="logos/tum.svg" height="80px"/>
+			</a>
+		</div>
+		<div class="col-lg-3" align="center">
+			<a href="https://www.comsys.rwth-aachen.de">
+				<img src="logos/rwth_comsys.svg" height="80px"/>
+			</a>
+		</div>
+		<div class="col-lg-3" align="center">
+			<a href="https://www.ripe.net/">
+				<img src="logos/ripe_ncc.svg" height="80px"/>
+			</a>
+		</div>
+	</div>
+	<div class="row" style="padding-top: 10px;">
+		<div class="col-lg-3" align="center">
+			<a href="https://www.uc3m.es/">
+				<img src="logos/uc3m.png" height="60px"/>
+			</a>
+		</div>
+		<div class="col-lg-3" align="center">
+			<a href="https://www.networks.imdea.org/">
+				<img src="logos/imdea.png" height="60px"/>
+			</a>
+		</div>
+		<div class="col-lg-3" align="center">
+			<a href="https://www.icsi.berkeley.edu/">
+				<img src="logos/icsi.jpg" height="60px"/>
+			</a>
+		</div>
+	</div>
+</div>
+
+    </div>  <!-- col -->
+  </div>  <!-- row -->
+
+    </div> <!-- /container -->
+
+</body>
+</html>
